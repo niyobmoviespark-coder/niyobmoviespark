@@ -3,21 +3,176 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Niyob Movies Park 🎬</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Niyob Movies Park</title>
+  <style>
+    /* Muonekano wa jumla */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #111;
+      color: #fff;
+    }
+
+    /* Kichwa cha tovuti */
+    header {
+      background-color: #222;
+      padding: 15px;
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
+      position: relative;
+    }
+
+    /* Banner ya offer */
+    .banner {
+      background: #e50914;
+      color: #fff;
+      padding: 10px;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .banner span {
+      display: inline-block;
+      padding-left: 100%;
+      animation: scrollBanner 15s linear infinite;
+    }
+
+    @keyframes scrollBanner {
+      from { transform: translateX(0); }
+      to { transform: translateX(-100%); }
+    }
+
+    /* Nav icons */
+    .nav-icons {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+    }
+
+    .nav-icons a {
+      margin-left: 10px;
+      text-decoration: none;
+      font-size: 20px;
+    }
+
+    .whatsapp {
+      color: #25D366;
+      font-weight: bold;
+    }
+
+    /* Carousel */
+    .carousel {
+      position: relative;
+      max-width: 100%;
+      height: 250px;
+      overflow: hidden;
+      margin: 20px auto;
+      border-radius: 10px;
+    }
+
+    .carousel img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      display: none;
+    }
+
+    .carousel img.active {
+      display: block;
+    }
+
+    /* Vifurushi */
+    .pricing {
+      text-align: center;
+      margin: 20px;
+    }
+
+    .plan {
+      background: #222;
+      padding: 20px;
+      margin: 10px auto;
+      max-width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+
+    .plan h3 {
+      color: #e50914;
+    }
+
+    /* WhatsApp Contact chini */
+    .contact {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .contact a {
+      background: #25D366;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+  </style>
 </head>
 <body>
   <header>
-    🎬 Karibu <span style="color:#e50914;">Niyob Movies Park</span> 🍿⭐
+    Niyob Movies Park 🎬
+    <div class="nav-icons">
+      <a href="#" title="Search">🔍</a>
+      <a href="#" title="Account">👤</a>
+      <a href="https://wa.me/255753440849" target="_blank" class="whatsapp" title="WhatsApp">💬</a>
+    </div>
   </header>
 
-  <p>
-    Sehemu yako bora ya kutazama na kufurahia filamu kwa bei nafuu kupitia Mpesa na Airtel Money.  
-  </p>
-
-  <div>
-    <button>🍿 Jiunge Sasa</button>
-    <button>🎥 Tazama Filamu</button>
+  <!-- Banner ya offer -->
+  <div class="banner">
+    <span>🎉 Karibu NiyobMovies! Jiunge sasa kwa TSh 2,500 wiki au TSh 7,000 mwezi – Full HD Movies bila kikomo 🎬🔥</span>
   </div>
+
+  <!-- Carousel -->
+  <div class="carousel">
+    <img src="https://picsum.photos/id/237/800/400" class="active" alt="Movie 1">
+    <img src="https://picsum.photos/id/238/800/400" alt="Movie 2">
+    <img src="https://picsum.photos/id/239/800/400" alt="Movie 3">
+  </div>
+
+  <!-- Vifurushi -->
+  <div class="pricing">
+    <div class="plan">
+      <h3>Wiki Plan</h3>
+      <p>TSh 2,500</p>
+      <button>Jiunge Sasa</button>
+    </div>
+    <div class="plan">
+      <h3>Mwezi Plan</h3>
+      <p>TSh 7,000</p>
+      <button>Jiunge Sasa</button>
+    </div>
+  </div>
+
+  <!-- Contact -->
+  <div class="contact">
+    <p>📞 Ukiwa na changamoto, wasiliana nasi moja kwa moja WhatsApp:</p>
+    <a href="https://wa.me/255753440849" target="_blank">WhatsApp: 0753 440 849</a>
+  </div>
+
+  <script>
+    // Script ya carousel
+    let index = 0;
+    const slides = document.querySelectorAll(".carousel img");
+
+    function showSlide() {
+      slides.forEach((slide, i) => {
+        slide.classList.remove("active");
+        if (i === index) slide.classList.add("active");
+      });
+      index = (index + 1) % slides.length;
+    }
+
+    setInterval(showSlide, 4000); // badilisha kila sekunde 4
+  </script>
 </body>
 </html>
