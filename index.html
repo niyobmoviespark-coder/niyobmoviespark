@@ -33,7 +33,7 @@
     .menu {
       display: flex;
       justify-content: center;
-      gap: 20px;
+      gap: 15px;
       background: #111;
       padding: 10px 0;
     }
@@ -42,8 +42,8 @@
       background: none;
       border: none;
       color: #fff;
-      font-size: 16px;
-      padding: 8px 16px;
+      font-size: 15px;
+      padding: 6px 14px;
       border-radius: 20px;
       cursor: pointer;
     }
@@ -54,20 +54,44 @@
 
     .movies {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 12px;
       padding: 20px;
     }
 
-    .movies img {
+    .movie-card {
+      background: #111;
+      border-radius: 10px;
+      overflow: hidden;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+
+    .movie-card:hover {
+      transform: scale(1.05);
+    }
+
+    .movie-card img {
       width: 100%;
-      border-radius: 8px;
+      height: 210px;
+      object-fit: cover;
+    }
+
+    .movie-card p {
+      margin: 8px 0;
+      font-size: 14px;
+      font-weight: bold;
+      color: #fff;
     }
 
     .pricing {
       text-align: center;
-      padding: 20px;
+      padding: 15px;
       font-size: 18px;
+      font-weight: bold;
+      background: #111;
+      margin: 20px;
+      border-radius: 8px;
     }
 
     .form-section {
@@ -122,16 +146,34 @@
   </nav>
 
   <section class="movies">
-    <img src="https://m.media-amazon.com/images/I/81p+xe8cbnL._AC_SY679_.jpg" alt="Spider-Man">
-    <img src="https://m.media-amazon.com/images/I/71niXI3lxlL._AC_SY679_.jpg" alt="Black Panther">
-    <img src="https://m.media-amazon.com/images/I/91zN34XqF9L._AC_SY679_.jpg" alt="Parasite">
-    <img src="https://m.media-amazon.com/images/I/81M0c+eYmRL._AC_SY679_.jpg" alt="Red Notice">
-    <img src="https://m.media-amazon.com/images/I/91T6RLMYqGL._AC_SY679_.jpg" alt="Hustle">
-    <img src="https://m.media-amazon.com/images/I/81zM2P4Gx8L._AC_SY679_.jpg" alt="Old">
+    <div class="movie-card">
+      <img src="https://m.media-amazon.com/images/I/81p+xe8cbnL._AC_SY679_.jpg" alt="Spider-Man">
+      <p>Spider-Man</p>
+    </div>
+    <div class="movie-card">
+      <img src="https://m.media-amazon.com/images/I/71niXI3lxlL._AC_SY679_.jpg" alt="Black Panther">
+      <p>Black Panther</p>
+    </div>
+    <div class="movie-card">
+      <img src="https://m.media-amazon.com/images/I/91zN34XqF9L._AC_SY679_.jpg" alt="Parasite">
+      <p>Parasite</p>
+    </div>
+    <div class="movie-card">
+      <img src="https://m.media-amazon.com/images/I/81M0c+eYmRL._AC_SY679_.jpg" alt="Red Notice">
+      <p>Red Notice</p>
+    </div>
+    <div class="movie-card">
+      <img src="https://m.media-amazon.com/images/I/91T6RLMYqGL._AC_SY679_.jpg" alt="Hustle">
+      <p>Hustle</p>
+    </div>
+    <div class="movie-card">
+      <img src="https://m.media-amazon.com/images/I/81zM2P4Gx8L._AC_SY679_.jpg" alt="Old">
+      <p>Old</p>
+    </div>
   </section>
 
   <section class="pricing">
-    <p>WIKI: TZS 2,500 / MWEZI: TZS 7,000</p>
+    WIKI: TZS 2,500 / MWEZI: TZS 7,000
   </section>
 
   <section class="form-section">
