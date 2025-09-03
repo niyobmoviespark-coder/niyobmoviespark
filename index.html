@@ -1,178 +1,104 @@
 <DOCTYPE html>
 <html lang="sw">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Niyob Movies Park</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Niyob Movie Spark</title>
   <style>
-    /* Muonekano wa jumla */
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
-      background-color: #111;
+      font-family: Arial, sans-serif;
+      background-color: #0c0c0c;
       color: #fff;
     }
-
-    /* Kichwa cha tovuti */
     header {
-      background-color: #222;
-      padding: 15px;
       text-align: center;
-      font-size: 22px;
-      font-weight: bold;
-      position: relative;
+      padding: 20px;
+      background: #111;
     }
-
-    /* Banner ya offer */
-    .banner {
-      background: #e50914;
-      color: #fff;
-      padding: 10px;
-      overflow: hidden;
-      white-space: nowrap;
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+      color: #ff4444;
     }
-
-    .banner span {
-      display: inline-block;
-      padding-left: 100%;
-      animation: scrollBanner 15s linear infinite;
-    }
-
-    @keyframes scrollBanner {
-      from { transform: translateX(0); }
-      to { transform: translateX(-100%); }
-    }
-
-    /* Nav icons */
-    .nav-icons {
-      position: absolute;
-      top: 15px;
-      right: 15px;
-    }
-
-    .nav-icons a {
-      margin-left: 10px;
-      text-decoration: none;
-      font-size: 20px;
-    }
-
-    .whatsapp {
-      color: #25D366;
-      font-weight: bold;
-    }
-
-    /* Carousel */
-    .carousel {
+    .slider {
       position: relative;
       max-width: 100%;
-      height: 250px;
+      height: 420px;
       overflow: hidden;
-      margin: 20px auto;
-      border-radius: 10px;
     }
-
-    .carousel img {
+    .slides {
+      display: flex;
+      width: 400%;
+      height: 100%;
+      animation: slide 20s infinite;
+    }
+    .slides img {
       width: 100%;
-      height: 250px;
+      height: 420px;
       object-fit: cover;
-      display: none;
     }
-
-    .carousel img.active {
-      display: block;
+    @keyframes slide {
+      0% { transform: translateX(0%); }
+      20% { transform: translateX(0%); }
+      25% { transform: translateX(-100%); }
+      45% { transform: translateX(-100%); }
+      50% { transform: translateX(-200%); }
+      70% { transform: translateX(-200%); }
+      75% { transform: translateX(-300%); }
+      95% { transform: translateX(-300%); }
+      100% { transform: translateX(0%); }
     }
-
-    /* Vifurushi */
     .pricing {
       text-align: center;
-      margin: 20px;
+      padding: 40px 20px;
+      background: #181818;
     }
-
-    .plan {
-      background: #222;
-      padding: 20px;
-      margin: 10px auto;
-      max-width: 300px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    .pricing h2 {
+      margin-bottom: 20px;
+      color: #ffcc00;
     }
-
-    .plan h3 {
-      color: #e50914;
+    .pricing .plan {
+      margin: 10px 0;
+      font-size: 20px;
     }
-
-    /* WhatsApp Contact chini */
-    .contact {
+    .whatsapp {
+      display: block;
+      width: 200px;
+      margin: 30px auto;
+      padding: 12px;
       text-align: center;
-      margin: 30px 0;
-    }
-
-    .contact a {
-      background: #25D366;
+      background: #25d366;
       color: white;
-      padding: 10px 20px;
       text-decoration: none;
-      border-radius: 5px;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+    .whatsapp:hover {
+      background: #20b954;
     }
   </style>
 </head>
 <body>
   <header>
-    Niyob Movies Park 🎬
-    <div class="nav-icons">
-      <a href="#" title="Search">🔍</a>
-      <a href="#" title="Account">👤</a>
-      <a href="https://wa.me/255753440849" target="_blank" class="whatsapp" title="WhatsApp">💬</a>
-    </div>
+    <h1>🎬 Niyob Movie Spark</h1>
+    <p>Bora kuliko zote - Muonekano wa Kimataifa</p>
   </header>
 
-  <!-- Banner ya offer -->
-  <div class="banner">
-    <span>🎉 Karibu NiyobMovies! Jiunge sasa kwa TSh 2,500 wiki au TSh 7,000 mwezi – Full HD Movies bila kikomo 🎬🔥</span>
-  </div>
-
-  <!-- Carousel -->
-  <div class="carousel">
-    <img src="https://picsum.photos/id/237/800/400" class="active" alt="Movie 1">
-    <img src="https://picsum.photos/id/238/800/400" alt="Movie 2">
-    <img src="https://picsum.photos/id/239/800/400" alt="Movie 3">
-  </div>
-
-  <!-- Vifurushi -->
-  <div class="pricing">
-    <div class="plan">
-      <h3>Wiki Plan</h3>
-      <p>TSh 2,500</p>
-      <button>Jiunge Sasa</button>
-    </div>
-    <div class="plan">
-      <h3>Mwezi Plan</h3>
-      <p>TSh 7,000</p>
-      <button>Jiunge Sasa</button>
+  <div class="slider">
+    <div class="slides">
+      <img src="https://m.media-amazon.com/images/I/81p+xe8cbnL._AC_SY679_.jpg" alt="Avatar Poster">
+      <img src="https://m.media-amazon.com/images/I/71niXI3lxlL._AC_SY679_.jpg" alt="Black Panther Poster">
+      <img src="https://m.media-amazon.com/images/I/91z3N4xQF9L._AC_SY679_.jpg" alt="Fast X Poster">
+      <img src="https://m.media-amazon.com/images/I/81MQc+eYmrL._AC_SY679_.jpg" alt="Wakanda Forever Poster">
     </div>
   </div>
 
-  <!-- Contact -->
-  <div class="contact">
-    <p>📞 Ukiwa na changamoto, wasiliana nasi moja kwa moja WhatsApp:</p>
-    <a href="https://wa.me/255753440849" target="_blank">WhatsApp: 0753 440 849</a>
-  </div>
-
-  <script>
-    // Script ya carousel
-    let index = 0;
-    const slides = document.querySelectorAll(".carousel img");
-
-    function showSlide() {
-      slides.forEach((slide, i) => {
-        slide.classList.remove("active");
-        if (i === index) slide.classList.add("active");
-      });
-      index = (index + 1) % slides.length;
-    }
-
-    setInterval(showSlide, 4000); // badilisha kila sekunde 4
-  </script>
+  <section class="pricing">
+    <h2>💳 Vifurushi Vyetu</h2>
+    <p class="plan">Wiki moja - TZS 2,500</p>
+    <p class="plan">Mwezi mzima - TZS 7,000</p>
+    <a class="whatsapp" href="https://wa.me/255753440859">💬 Wasiliana WhatsApp</a>
+  </section>
 </body>
 </html>
