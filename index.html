@@ -1,104 +1,148 @@
 <DOCTYPE html>
 <html lang="sw">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Niyob Movie Spark</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NyoBMovies Park</title>
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #0c0c0c;
+      background-color: #000;
       color: #fff;
     }
+
     header {
       text-align: center;
-      padding: 20px;
-      background: #111;
+      padding: 20px 10px;
+      background-color: #000;
     }
+
     header h1 {
+      color: red;
+      font-size: 32px;
       margin: 0;
-      font-size: 28px;
-      color: #ff4444;
     }
-    .slider {
-      position: relative;
-      max-width: 100%;
-      height: 420px;
-      overflow: hidden;
+
+    header p {
+      margin: 5px 0 0;
+      font-size: 14px;
+      color: #bbb;
     }
-    .slides {
+
+    .menu {
       display: flex;
-      width: 400%;
-      height: 100%;
-      animation: slide 20s infinite;
+      justify-content: center;
+      gap: 20px;
+      background: #111;
+      padding: 10px 0;
     }
-    .slides img {
+
+    .menu button {
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 16px;
+      padding: 8px 16px;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    .menu button.active {
+      background: red;
+    }
+
+    .movies {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      padding: 20px;
+    }
+
+    .movies img {
       width: 100%;
-      height: 420px;
-      object-fit: cover;
+      border-radius: 8px;
     }
-    @keyframes slide {
-      0% { transform: translateX(0%); }
-      20% { transform: translateX(0%); }
-      25% { transform: translateX(-100%); }
-      45% { transform: translateX(-100%); }
-      50% { transform: translateX(-200%); }
-      70% { transform: translateX(-200%); }
-      75% { transform: translateX(-300%); }
-      95% { transform: translateX(-300%); }
-      100% { transform: translateX(0%); }
-    }
+
     .pricing {
       text-align: center;
-      padding: 40px 20px;
-      background: #181818;
+      padding: 20px;
+      font-size: 18px;
     }
-    .pricing h2 {
-      margin-bottom: 20px;
+
+    .form-section {
+      background: #111;
+      padding: 20px;
+      margin: 20px;
+      border-radius: 10px;
+    }
+
+    .form-section h2 {
+      text-align: center;
       color: #ffcc00;
     }
-    .pricing .plan {
+
+    .form-section input {
+      width: 100%;
+      padding: 10px;
       margin: 10px 0;
-      font-size: 20px;
+      border: none;
+      border-radius: 5px;
     }
+
     .whatsapp {
       display: block;
-      width: 200px;
-      margin: 30px auto;
-      padding: 12px;
       text-align: center;
-      background: #25d366;
+      background: #25D366;
       color: white;
       text-decoration: none;
+      padding: 12px;
       border-radius: 8px;
       font-weight: bold;
+      margin-top: 10px;
     }
+
     .whatsapp:hover {
       background: #20b954;
     }
   </style>
 </head>
 <body>
+
   <header>
-    <h1>🎬 Niyob Movie Spark</h1>
+    <h1>NyoBMovies PARK</h1>
     <p>Bora kuliko zote - Muonekano wa Kimataifa</p>
   </header>
 
-  <div class="slider">
-    <div class="slides">
-      <img src="https://m.media-amazon.com/images/I/81p+xe8cbnL._AC_SY679_.jpg" alt="Avatar Poster">
-      <img src="https://m.media-amazon.com/images/I/71niXI3lxlL._AC_SY679_.jpg" alt="Black Panther Poster">
-      <img src="https://m.media-amazon.com/images/I/91z3N4xQF9L._AC_SY679_.jpg" alt="Fast X Poster">
-      <img src="https://m.media-amazon.com/images/I/81MQc+eYmrL._AC_SY679_.jpg" alt="Wakanda Forever Poster">
-    </div>
-  </div>
+  <nav class="menu">
+    <button class="active">Trending</button>
+    <button>Action</button>
+    <button>Comedy</button>
+    <button>Drama</button>
+  </nav>
+
+  <section class="movies">
+    <img src="https://m.media-amazon.com/images/I/81p+xe8cbnL._AC_SY679_.jpg" alt="Spider-Man">
+    <img src="https://m.media-amazon.com/images/I/71niXI3lxlL._AC_SY679_.jpg" alt="Black Panther">
+    <img src="https://m.media-amazon.com/images/I/91zN34XqF9L._AC_SY679_.jpg" alt="Parasite">
+    <img src="https://m.media-amazon.com/images/I/81M0c+eYmRL._AC_SY679_.jpg" alt="Red Notice">
+    <img src="https://m.media-amazon.com/images/I/91T6RLMYqGL._AC_SY679_.jpg" alt="Hustle">
+    <img src="https://m.media-amazon.com/images/I/81zM2P4Gx8L._AC_SY679_.jpg" alt="Old">
+  </section>
 
   <section class="pricing">
-    <h2>💳 Vifurushi Vyetu</h2>
-    <p class="plan">Wiki moja - TZS 2,500</p>
-    <p class="plan">Mwezi mzima - TZS 7,000</p>
-    <a class="whatsapp" href="https://wa.me/255753440859">💬 Wasiliana WhatsApp</a>
+    <p>WIKI: TZS 2,500 / MWEZI: TZS 7,000</p>
   </section>
+
+  <section class="form-section">
+    <h2>Jiunge Nasi</h2>
+    <form>
+      <input type="text" placeholder="Jina Lako" required>
+      <input type="email" placeholder="Email" required>
+      <input type="tel" placeholder="Namba ya Simu" required>
+      <a class="whatsapp" href="https://wa.me/255753440859" target="_blank">📲 Wasiliana WhatsApp</a>
+    </form>
+  </section>
+
 </body>
 </html>
